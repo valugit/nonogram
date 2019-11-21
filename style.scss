@@ -1,0 +1,257 @@
+@font-face {
+	font-family: 'pixel';
+	src: url("./pixel.ttf");
+}
+
+* {
+	background-color: none;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	min-height: 100vh;
+	max-width: 100vw;
+	width: 100vw;
+	color: white;
+	font-size: 20px;
+	font-family: 'pixel', 'Courier New', Courier, monospace;
+}
+
+header {
+	background-color: #42414b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+
+	img {
+		width: 78px;
+		height: 58px;
+	}
+}
+
+.bg {
+	position: relative;
+	height: 90vh;
+	background-image: url("bg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& > div {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+		}
+	}
+}
+
+.top {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: -100px;
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		width: 45px;
+		margin: 2px 2px 2px 2px;
+
+		& > div {
+			margin-top: 10px;
+		}
+	}
+}
+
+.side {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	left: -75px;
+
+	& > div {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		height: 45px;
+		margin: 2px 2px 2px 2px;
+
+		& > div {
+			margin-left: 20px;
+		}
+	}
+}
+
+.grid {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.win {
+		display: none;
+		position: absolute;
+		font-size: 30px;
+		bottom: -50px;
+	}
+}
+
+label {
+	display: block;
+	background-color: #3f404a;
+	width: 45px;
+	height: 45px;
+	margin: 2px 2px 2px 2px;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+input {
+	display: none;
+}
+
+@for $i from 0 through 9 {
+	@for $j from 0 through 9 {
+		input[id="box#{$i}_#{$j}"]:checked ~ .bg label[for="box#{$i}_#{$j}"] {
+			background-color: #6ed771;
+		}
+	}
+}
+
+img[src="logo-nonogramo.png"] {
+	width: 457px;
+	height: 60;
+}
+
+input[id="box0_0"]:not(:checked)
+	~ input[id="box0_1"]:not(:checked)
+	~ input[id="box0_2"]:not(:checked)
+	~ input[id="box0_3"]:not(:checked)
+	~ input[id="box0_4"]:checked
+	~ input[id="box0_5"]:not(:checked)
+	~ input[id="box0_6"]:not(:checked)
+	~ input[id="box0_7"]:not(:checked)
+	~ input[id="box0_8"]:not(:checked)
+	~ input[id="box0_9"]:not(:checked)
+	~ input[id="box1_0"]:not(:checked)
+	~ input[id="box1_1"]:not(:checked)
+	~ input[id="box1_2"]:not(:checked)
+	~ input[id="box1_3"]:checked
+	~ input[id="box1_4"]:checked
+	~ input[id="box1_5"]:checked
+	~ input[id="box1_6"]:not(:checked)
+	~ input[id="box1_7"]:not(:checked)
+	~ input[id="box1_8"]:not(:checked)
+	~ input[id="box1_9"]:not(:checked)
+	~ input[id="box2_0"]:not(:checked)
+	~ input[id="box2_1"]:not(:checked)
+	~ input[id="box2_2"]:checked
+	~ input[id="box2_3"]:not(:checked)
+	~ input[id="box2_4"]:checked
+	~ input[id="box2_5"]:checked
+	~ input[id="box2_6"]:not(:checked)
+	~ input[id="box2_7"]:not(:checked)
+	~ input[id="box2_8"]:not(:checked)
+	~ input[id="box2_9"]:not(:checked)
+	~ input[id="box3_0"]:not(:checked)
+	~ input[id="box3_1"]:checked
+	~ input[id="box3_2"]:not(:checked)
+	~ input[id="box3_3"]:not(:checked)
+	~ input[id="box3_4"]:checked
+	~ input[id="box3_5"]:checked
+	~ input[id="box3_6"]:checked
+	~ input[id="box3_7"]:not(:checked)
+	~ input[id="box3_8"]:not(:checked)
+	~ input[id="box3_9"]:not(:checked)
+	~ input[id="box4_0"]:not(:checked)
+	~ input[id="box4_1"]:checked
+	~ input[id="box4_2"]:not(:checked)
+	~ input[id="box4_3"]:not(:checked)
+	~ input[id="box4_4"]:checked
+	~ input[id="box4_5"]:checked
+	~ input[id="box4_6"]:checked
+	~ input[id="box4_7"]:not(:checked)
+	~ input[id="box4_8"]:not(:checked)
+	~ input[id="box4_9"]:not(:checked)
+	~ input[id="box5_0"]:not(:checked)
+	~ input[id="box5_1"]:checked
+	~ input[id="box5_2"]:checked
+	~ input[id="box5_3"]:not(:checked)
+	~ input[id="box5_4"]:checked
+	~ input[id="box5_5"]:checked
+	~ input[id="box5_6"]:checked
+	~ input[id="box5_7"]:checked
+	~ input[id="box5_8"]:not(:checked)
+	~ input[id="box5_9"]:not(:checked)
+	~ input[id="box6_0"]:not(:checked)
+	~ input[id="box6_1"]:not(:checked)
+	~ input[id="box6_2"]:checked
+	~ input[id="box6_3"]:checked
+	~ input[id="box6_4"]:checked
+	~ input[id="box6_5"]:checked
+	~ input[id="box6_6"]:checked
+	~ input[id="box6_7"]:checked
+	~ input[id="box6_8"]:not(:checked)
+	~ input[id="box6_9"]:not(:checked)
+	~ input[id="box7_0"]:not(:checked)
+	~ input[id="box7_1"]:not(:checked)
+	~ input[id="box7_2"]:not(:checked)
+	~ input[id="box7_3"]:not(:checked)
+	~ input[id="box7_4"]:checked
+	~ input[id="box7_5"]:not(:checked)
+	~ input[id="box7_6"]:not(:checked)
+	~ input[id="box7_7"]:not(:checked)
+	~ input[id="box7_8"]:not(:checked)
+	~ input[id="box7_9"]:not(:checked)
+	~ input[id="box8_0"]:checked
+	~ input[id="box8_1"]:checked
+	~ input[id="box8_2"]:checked
+	~ input[id="box8_3"]:checked
+	~ input[id="box8_4"]:checked
+	~ input[id="box8_5"]:checked
+	~ input[id="box8_6"]:checked
+	~ input[id="box8_7"]:checked
+	~ input[id="box8_8"]:checked
+	~ input[id="box8_9"]:checked
+	~ input[id="box9_0"]:not(:checked)
+	~ input[id="box9_1"]:checked
+	~ input[id="box9_2"]:checked
+	~ input[id="box9_3"]:checked
+	~ input[id="box9_4"]:checked
+	~ input[id="box9_5"]:checked
+	~ input[id="box9_6"]:checked
+	~ input[id="box9_7"]:checked
+	~ input[id="box9_8"]:checked
+	~ input[id="box9_9"]:not(:checked)
+	~ .bg
+	.grid
+	.win {
+	display: block;
+}
